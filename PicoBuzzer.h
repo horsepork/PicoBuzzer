@@ -1,3 +1,6 @@
+#ifndef PICOBUZZER_H
+#define PICOBUZZER_H
+
 #include "Arduino.h"
 
 class PicoBuzzer{
@@ -45,3 +48,5 @@ class PicoBuzzer{
 };
 
 PicoBuzzer buzzer(2);
+
+#endif
