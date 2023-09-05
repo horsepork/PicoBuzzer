@@ -24,7 +24,7 @@ class PicoBuzzer{
             delay(250);
             ::noTone(buzzPin);
         }
-        void tone(uint16_t _frequency, int16_t _duration = 2000){ // currently max beep time of 2 seconds?
+        void tone(uint16_t _frequency = 2000, int16_t _duration = 50){
             if(buzzing) noTone();
             ::tone(buzzPin, _frequency);
             buzzing = true;
@@ -44,6 +44,12 @@ class PicoBuzzer{
             }
             noTone();
             buzzing = false;
+        }
+
+        void tone(uint8_t* buzzerDataArray){
+            int frequency = buzzerDataArray[0] + (buzzerDataArray[1] << 8);
+            uint32_t duration = buzzerDataArray[2] + (buzzerDataArray[3] << 8);
+            buzzer.tone(frequency, duration);
         }
 };
 
