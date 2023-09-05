@@ -49,7 +49,7 @@ class PicoBuzzer{
         void tone(uint8_t* buzzerDataArray){
             int frequency = buzzerDataArray[0] + (buzzerDataArray[1] << 8);
             uint32_t duration = buzzerDataArray[2] + (buzzerDataArray[3] << 8);
-            buzzer.tone(frequency, duration);
+            tone(frequency, duration);
         }
 };
 
