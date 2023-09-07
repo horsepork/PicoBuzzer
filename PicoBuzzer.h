@@ -53,6 +53,6 @@ class PicoBuzzer{
         }
 };
 
-PicoBuzzer buzzer(2);
+PicoBuzzer onboardBuzzer(2);
 
 #endif
