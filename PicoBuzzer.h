@@ -46,9 +46,9 @@ class PicoBuzzer{
             buzzing = false;
         }
 
-        void tone(uint8_t* buzzerDataArray){
-            int frequency = buzzerDataArray[0] + (buzzerDataArray[1] << 8);
-            uint32_t duration = buzzerDataArray[2] + (buzzerDataArray[3] << 8);
+        void tone(uint8_t* buzzerDataArray, uint8_t arrayOffset = 0){
+            int frequency = buzzerDataArray[0 + arrayOffset] + (buzzerDataArray[1 + arrayOffset] << 8);
+            uint32_t duration = buzzerDataArray[2 + arrayOffset] + (buzzerDataArray[3 + arrayOffset] << 8);
             tone(frequency, duration);
         }
 };
