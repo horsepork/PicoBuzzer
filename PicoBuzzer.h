@@ -38,10 +38,10 @@ class PicoBuzzer{
         }
 
         void startupTone(){
-            ::tone(buzzPin, 2637);
+            ::tone(buzzPin, 2093);
             delay(125);
             ::noTone(buzzPin);
-            ::tone(buzzPin, 1760);
+            ::tone(buzzPin, 1397);
             delay(250);
             ::noTone(buzzPin);
         }
