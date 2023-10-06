@@ -37,6 +37,15 @@ class PicoBuzzer{
             buzzing = false;
         }
 
+        void startupTone(){
+            ::tone(buzzPin, 2637);
+            delay(125);
+            ::noTone(buzzPin);
+            ::tone(buzzPin, 1760);
+            delay(250);
+            ::noTone(buzzPin);
+        }
+
         void update(){
             if(buzzing){
                 if(millis() - timer > 5000) { } // cap out buzzing at 5 seconds
